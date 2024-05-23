@@ -1,8 +1,16 @@
-'use strict'
-
 import { Router } from 'express'
-let router = Router()
+import {
+    getAsignatura,
+    createAsignatura,
+    updateAsignatura,
+    deleteAsignatura
+} from '../../../controllers/asignaturasController';
 
-// TODO
+let router = Router();
 
-export default router
+router.get('/:id', getAsignatura);
+router.post('/', createAsignatura);
+router.put('/:id', updateAsignatura);
+router.delete('/:id', deleteAsignatura);
+
+export default router;

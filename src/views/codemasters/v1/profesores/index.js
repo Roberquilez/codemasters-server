@@ -1,8 +1,16 @@
-'use strict'
-
 import { Router } from 'express'
-let router = Router()
+import {
+    getProfesor,
+    createProfesor,
+    updateProfesor,
+    deleteProfesor
+} from '../../../controllers/profesorController';
 
-// TODO
+let router = Router();
 
-export default router
+router.get('/:id', getProfesor);
+router.post('/', createProfesor);
+router.put('/:id', updateProfesor);
+router.delete('/:id', deleteProfesor);
+
+export default router;

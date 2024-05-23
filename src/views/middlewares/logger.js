@@ -1,6 +1,8 @@
 'use strict'
 
 export default function loggerMiddleware(req, res, next) {
-    console.debug(`${req.method} ${req.originalUrl}`)
-    next()
+    const usuarioCodeMasters = req.headers['usuariocodemasters'];
+    console.log(`UsuarioCodeMasters: ${usuarioCodeMasters}`);
+    req.logged = true;
+    next();
 }
